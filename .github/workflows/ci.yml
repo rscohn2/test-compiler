@@ -34,7 +34,7 @@ jobs:
     steps:
     - uses: rscohn2/setup-oneapi@v0
       with:
-        components: icx@023.0.0
+        components: icx@2023.0.0
     - name: compile
       run: |
         source ~/oneapi/setvars.sh
@@ -45,7 +45,7 @@ jobs:
     steps:
     - uses: rscohn2/setup-oneapi@v0
       with:
-        components: icx@023.1.0
+        components: icx@2023.1.0
     - name: compile
       run: |
         source /opt/intel/oneapi/setvars.sh
