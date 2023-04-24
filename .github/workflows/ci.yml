@@ -56,6 +56,7 @@ jobs:
         components: icx@2023.1.0
     - name: compile
       run: |
+        sudo rm -rf /usr/lib/gcc/x86_64-linux-gnu/{9,10,11}
         source /opt/intel/oneapi/setvars.sh
         icpx -v -c test.cpp
   
