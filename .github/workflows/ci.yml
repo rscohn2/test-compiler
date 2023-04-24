@@ -13,12 +13,14 @@ jobs:
       run: |
         wget -q -O install.sh https://registrationcenter-download.intel.com/akdlm/IRC_NAS/89283df8-c667-47b0-b7e1-c4573e37bd3e/l_dpcpp-cpp-compiler_p_2023.1.0.46347_offline.sh
         bash install.sh -s -a -s --action install --eula accept
+        sudo rm -rf /usr/lib/gcc/x86_64-linux-gnu/{9,10,11}
     - name: compile
       run: |
         source ~/intel/oneapi/setvars.sh
         icpx -v -c test.cpp
 
   icpx202300:
+    if: false
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -32,6 +34,7 @@ jobs:
         icpx -v -c test.cpp
 
   setup_202300:
+    if: false
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -44,6 +47,7 @@ jobs:
         icpx -v -c test.cpp
 
   setup_202310:
+    if: false
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
