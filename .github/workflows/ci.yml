@@ -8,6 +8,7 @@ jobs:
   icpx202310:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v3
     - name: install
       run: |
         wget -q -O install.sh https://registrationcenter-download.intel.com/akdlm/IRC_NAS/89283df8-c667-47b0-b7e1-c4573e37bd3e/l_dpcpp-cpp-compiler_p_2023.1.0.46347_offline.sh
@@ -20,6 +21,7 @@ jobs:
   icpx202300:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v3
     - name: install
       run: |
         wget -q -O install.sh https://registrationcenter-download.intel.com/akdlm/irc_nas/19123/l_dpcpp-cpp-compiler_p_2023.0.0.25393_offline.sh
@@ -32,6 +34,7 @@ jobs:
   setup_202300:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v3
     - uses: rscohn2/setup-oneapi@v0
       with:
         components: icx@2023.0.0
@@ -43,6 +46,7 @@ jobs:
   setup_202310:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v3
     - uses: rscohn2/setup-oneapi@v0
       with:
         components: icx@2023.1.0
