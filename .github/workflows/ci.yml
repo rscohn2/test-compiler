@@ -14,7 +14,7 @@ jobs:
         bash install.sh -s -a -s --action install --eula accept
     - name: compile
       run: |
-        source /opt/intel/oneapi/setvars.sh
+        source ~/oneapi/setvars.sh
         icpx -v -c test.cpp
 
   icpx202300:
@@ -37,7 +37,7 @@ jobs:
         components: icx@2023.0.0
     - name: compile
       run: |
-        source ~/oneapi/setvars.sh
+        source /opt/intel/oneapi/setvars.sh
         icpx -v -c test.cpp
 
   setup_202310:
