@@ -28,4 +28,26 @@ jobs:
       run: |
         source /opt/intel/oneapi/setvars.sh
         icpx -v -c test.cpp
-    
+
+  setup_202300:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: rscohn2/setup-oneapi@v0
+      with:
+        components: icx@023.0.0
+    - name: compile
+      run: |
+        source /opt/intel/oneapi/setvars.sh
+        icpx -v -c test.cpp
+
+  setup_202310:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: rscohn2/setup-oneapi@v0
+      with:
+        components: icx@023.1.0
+    - name: compile
+      run: |
+        source /opt/intel/oneapi/setvars.sh
+        icpx -v -c test.cpp
+  
