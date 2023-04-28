@@ -56,7 +56,32 @@ jobs:
         components: icx@2023.1.0
     - name: compile
       run: |
+        source /opt/intel/oneapi/setvars.sh
+        icpx -v -c test.cpp
+
+  setup_202310_rm:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: rscohn2/setup-oneapi@v0
+      with:
+        components: icx@2023.1.0
+    - name: compile
+      run: |
         sudo rm -rf /usr/lib/gcc/x86_64-linux-gnu/{9,10,11}
         source /opt/intel/oneapi/setvars.sh
         icpx -v -c test.cpp
   
+  setup_202310_CC:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: rscohn2/setup-oneapi@v0
+      with:
+        components: icx@2023.1.0
+    - name: compile
+      run: |
+        source /opt/intel/oneapi/setvars.sh
+        export CC=ICX
+        icpx -v -c test.cpp
+    
