@@ -72,7 +72,7 @@ setup_202310_rm:
         source /opt/intel/oneapi/setvars.sh
         icpx -v -c test.cpp
   
-  setup_202310_CC:
+setup_202310_CC:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
